@@ -13,8 +13,11 @@ function getChristmasCountdown() {
     const minutes = String(currentDate.getMinutes()).padStart(2, "0");
     const seconds = String(currentDate.getSeconds()).padStart(2, "0");
 
-    clock.innerText = `크리스마스까지 ${days}일 ${hours}시간 ${minutes}분 ${seconds}초`;
+    clock.innerText = `${days}일 ${hours}시간 ${minutes}분 ${seconds}초`;
 }
 
-getChristmasCountdown();
+getChristmasCountdown();eery
+
+Christmas
+
 setInterval(getChristmasCountdown, 1000);

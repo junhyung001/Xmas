@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="../css/snow.css">
+  <style>
+    :root {
+      --snow-color: white;
+    }
+
+    .snow {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background: var(--snow-color);
+      border-radius: 50%;
+    }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+  <script>
+    $(document).ready(function() {
+      var snowCount = 200; // 원하는 눈의 개수를 설정
+
+      for (var i = 0; i < snowCount; i++) {
+        $('<div class="snow"></div>').appendTo('body');
+      }
+
+      function getRandomColor() {
+        var letters = '0123456789ABCDEF';
+        var color = '#';
+        for (var i = 0; i < 6; i++) {
+          color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+      }
+
+      var snowElements = document.getElementsByClassName('snow');
+      for (var i = 0; i < snowElements.length; i++) {
+        var snowElement = snowElements[i];
+        snowElement.style.setProperty('--snow-color', getRandomColor());
+      }
+    });
+  </script>
+</body>
+
+</html>
